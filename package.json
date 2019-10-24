@@ -1,0 +1,19 @@
+{
+  "name": "426-project",
+  "version": "1.0.0",
+  "description": "COMP426 F19 Wes, Raj, Tony, Joshua Final Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrp316/426-project.git"
+  },
+  "author": "Wesley Newcomb, Raj Patel, Tony Ma, Joshua Pack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rrp316/426-project/issues"
+  },
+  "homepage": "https://github.com/rrp316/426-project#readme"
+}
