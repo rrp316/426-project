@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rrp316/426-project/issues"
   },
-  "homepage": "https://github.com/rrp316/426-project#readme"
+  "homepage": "https://github.com/rrp316/426-project#readme",
+  "dependencies": {
+    "bulma": "^0.8.0"
+  }
 }
