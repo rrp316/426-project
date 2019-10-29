@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <section class="hero is-info is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    ToolBox 
+                </h1>
+                <h2 class="subtitle">
+                    Login or SignUp 
+                </h2>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="title">Login</h1>
+                    <form>
+                        <div class="field">
+                            <label class="label">Username</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Username" name="username">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <div class="control">
+                                <input class="input" type="password" placeholder="Password" name="password">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="remember">
+                                    Remember login?
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-success" id="Login">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="column">
+                    <h1 class="title">Create Account</h1>
+                    <form>
+                        <div class="field">
+                            <label class="label">Username</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Username" name="username">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Password</label>
+                            <div class="control">
+                                <input class="input" type="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Repeat Password</label>
+                            <div class="control">
+                                <input class="input" type="password" placeholder="Repeat Passwerd" name="password">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Account type</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select name="accountType">
+                                        <option>Service Provider</option>
+                                        <option>Customer</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-success" id = "SignUp">SignUp</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container has-text-centered">
+                <h1 class="title">
+                        Report and Outage/Problem  
+                    </h1>
+                    <h2 class="subtitle">
+                        No need to log-in, go straight to the Fourm to report a problem! 
+                    </h2>
+                    <div class="field has-text-centered">
+                            <div class="control has-text-centered">
+                                <button class="button is-success" id = "Fourm">Fourm</button>
+                            </div>
+                        </div>
+            </div>
+        </section>
+</body>
+
+</html>
