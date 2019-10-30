@@ -13,25 +13,60 @@
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="request_form_render.js" type="module"></script>
     <div class="root">
-        <div class="tabs is-medium is-centered" id="noBottomMargin">
-            <ul>
-                <li>
-                    Home
-                </li>
-                <li>
-                    Page 1
-                </li>
-                <li>
-                    Page 2
-                </li>
-                <li>
-                    Page 3
-                </li>
-                <li>
-                    Page 4
-                </li>
-            </ul>
-        </div>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://google.com">
+                    Company Name
+                </a>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item">
+                        Home
+                    </a>
+
+                    <a class="navbar-item">
+                        Page 1
+                    </a>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            More
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                Page 2
+                            </a>
+                            <a class="navbar-item">
+                                Page 3
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary">
+                                <strong>Sign up</strong>
+                            </a>
+                            <a class="button is-light">
+                                Log in
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </div>
 
 </body>
