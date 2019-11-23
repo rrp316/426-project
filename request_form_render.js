@@ -26,6 +26,6 @@ const loadRequestForm = function() {
 }
 
 
-//$(function() {
-//    loadRequestForm();
-//});
+$(function() {
+    loadRequestForm();
+});
