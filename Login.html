@@ -6,18 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
     <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="loadNav.js" type="module"></script>
     <title>Login Page</title>
 </head>
 
 <body>
+    <div id="nav"></div>
     <section class="hero is-info is-fullheight">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title">
-                    ToolBox 
+                    ToolBox
                 </h1>
                 <h2 class="subtitle">
-                    Login or SignUp 
+                    Login or SignUp
                 </h2>
             </div>
         </div>
@@ -91,7 +95,7 @@
 
                         <div class="field">
                             <div class="control">
-                                <button class="button is-success" id = "SignUp">SignUp</button>
+                                <button class="button is-success" id="SignUp">SignUp</button>
                             </div>
                         </div>
                     </form>
@@ -101,19 +105,19 @@
     </section>
     <section class="section">
         <div class="container has-text-centered">
-                <h1 class="title">
-                        Report and Outage/Problem  
-                    </h1>
-                    <h2 class="subtitle">
-                        No need to log-in, go straight to the Fourm to report a problem! 
-                    </h2>
-                    <div class="field has-text-centered">
-                            <div class="control has-text-centered">
-                                <button class="button is-success" id = "Fourm">Fourm</button>
-                            </div>
-                        </div>
+            <h1 class="title">
+                Report and Outage/Problem
+            </h1>
+            <h2 class="subtitle">
+                No need to log-in, go straight to the Fourm to report a problem!
+            </h2>
+            <div class="field has-text-centered">
+                <div class="control has-text-centered">
+                    <button class="button is-success" id="Fourm">Fourm</button>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 </body>
 
 </html>
