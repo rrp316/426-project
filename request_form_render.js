@@ -2,7 +2,7 @@
 const loadRequestForm = function () {
     //TODO: standardize html to match the format of the site
     let body = $(`body`);
-    body.append(`<h1 class = "title">Request Maintenance Form</h1>`);
+    body.append(`<h1 class = "title" style="text-align: center; margin-top: 10px;">Request Maintenance Form</h1>`);
     let container = $(`<div class = "container"></div>`);
     let form = $(`<form></form>`);
     form.append(`<label class = "label">First Name</label>

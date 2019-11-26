@@ -2,7 +2,7 @@
 @primary: #fd6b21; // Orange*/
 
 /*body { background: @bg;}*/
-a { color: white; text-decoration: none; }
+/*a { color: white; text-decoration: none; }
 
 .arrow {
   text-align: center;
@@ -25,4 +25,4 @@ a { color: white; text-decoration: none; }
   60% {
     transform: translateY(-15px);
   }
-}
+}*/
