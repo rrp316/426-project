@@ -52,3 +52,32 @@ async function callTrafficAPI(bottomRight_lat, bottomRight_long, topLeft_lat, to
 
     return result['data']['incidents'];
 }
+
+async function callWeatherAPI(latitude, longitude) {
+    let u = `https://api.weatherbit.io/v2.0/current?key=2d45382b691e43a1b23c460134417d3c&lat=${latitude}&lon=${longitude}`;
+    let result = await axios({
+        method: 'get',
+        url: u,
+    });
+
+    result = result['data']['data'][0];
+    return result;
+}
+
+//expects input like: Chapel+Hill+North+Carolina
+async function callNewsAPI(s) {
+    const apiKey = '71ea46e41b244d18bf28feb232a6a2b2';
+    const searchtext = s;
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    let result = await axios({
+        method: 'get',
+        url: `https://newsapi.org/v2/everything?q=${searchtext}&from=${yyyy}-${mm}-${dd}&sortBy=popularity&apiKey=${apiKey}`,
+    });
+
+    result = result['data']['articles'];
+    return result;
+}

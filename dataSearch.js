@@ -38,14 +38,46 @@ export const handleAddressSearch = async () => {
         incidentCount = trafficResultArr.length;
     }
 
-    //update data.html
+    //call news api
+    let newsResultArr = await callNewsAPI(input);
 
-    //first clear old traffic list data
+    let articleCount = 7;
+    if (newsResultArr.length < articleCount) {
+        articleCount = newsResultArr.length;
+    }
+
+
+    //now update data.html:
+
+    //first clear old traffic list and news list data
     $("#trafficList").empty()
-    //then add in traffic data
+    $("#news").empty();
+    $("news").append(`<h2>News</h2>`); // add back in news header
+
+    //then add in traffic data and news article data
     for (let i = 0; i < incidentCount; i++) {
         $("#trafficList").append(`<li>${trafficResultArr[i]['shortDesc']}</li>`);
     }
+
+    for (let x = 0; x < articleCount; x++) {
+        $("#news").append(`
+            <div class="card">
+                <div class="card-content">
+                    <p class="title">
+                        <a class='newsLink' href='${newsResultArr[x]['url']}' target='_blank' rel='noopener noreferrer'>
+                            ${newsResultArr[x]['title']}
+                        </a>
+                    </p>
+                    <p>
+                        ${newsResultArr[x]['description']}
+                    </p>
+                </div>
+            </div>
+            <br />
+        `);
+    }
+
+    //then update weather data
     $("#weatherCurrentConditions").text(description);
     $("#weatherCurrentTemp").text(`Temperature: ${temp} °F`);
     $("#weatherCurrentWindSpeed").text(`Wind speed: ${wind_spd} mph`);
