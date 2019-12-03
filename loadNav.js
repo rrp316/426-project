@@ -1,3 +1,9 @@
+let loggedIn = false;
+
 $(function () {
-    $("#nav").load("nav.html");
+    if (loggedIn) {
+        $("#nav").load("unloggedInNav.html");
+    } else {
+        $("#nav").load("loggedInNav.html");
+    }
 });
