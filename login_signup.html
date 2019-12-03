@@ -10,26 +10,27 @@
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="loadNav.js" type="module"></script>
+    <script src="Login_signup.js" type="module"></script>
     <title>Login Page</title>
 </head>
 
 <body>
     <div id="nav"></div>
-    <section class="hero is-info is-fullheight">
+    <!--<section class="hero is-info is-fullheight">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title">
                     ToolBox
                 </h1>
                 <h2 class="subtitle">
-                    Login or SignUp
+                    Login or SignUp Below
                 </h2>
             </div>
-            <!--<div class="arrow bounce">
+            <div class="arrow bounce">
                 <a class="fa fa-arrow-down fa-2x" href="#"></a>
-            </div>-->
+            </div>
         </div>
-    </section>
+    </section>-->
     <section class="section">
         <div class="container">
             <div class="columns">
@@ -39,23 +40,23 @@
                         <div class="field">
                             <label class="label">Username</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="Username" name="username">
+                                <input class="input" type="text" id="username" placeholder="Username" name="username">
                             </div>
                         </div>
                         <div class="field">
                             <label class="label">Password</label>
                             <div class="control">
-                                <input class="input" type="password" placeholder="Password" name="password">
+                                <input class="input" type="password" id="password" placeholder="Password" name="password">
                             </div>
                         </div>
-                        <div class="field">
+                        <!--<div class="field">
                             <div class="control">
                                 <label class="checkbox">
                                     <input type="checkbox" name="remember">
                                     Remember login?
                                 </label>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="field">
                             <div class="control">
                                 <button class="button is-success" id="Login">Login</button>
@@ -69,23 +70,23 @@
                         <div class="field">
                             <label class="label">Username</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="Username" name="username">
+                                <input class="input" type="text" placeholder="Username" id="createdusername" name="username">
                             </div>
                         </div>
                         <div class="field">
                             <label class="label">Password</label>
                             <div class="control">
-                                <input class="input" type="password" placeholder="Password">
+                                <input class="input" type="password" id="createdpassword" placeholder="Password">
                             </div>
                         </div>
-                        <div class="field">
+                       <!-- <div class="field">
                             <label class="label">Repeat Password</label>
                             <div class="control">
                                 <input class="input" type="password" placeholder="Repeat Passwerd" name="password">
                             </div>
-                        </div>
+                        </div>-->
 
-                        <div class="field">
+                        <!--<div class="field">
                             <label class="label">Account type</label>
                             <div class="control">
                                 <div class="select">
@@ -95,7 +96,7 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
 
                         <div class="field">
                             <div class="control">

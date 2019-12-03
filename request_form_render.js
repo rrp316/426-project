@@ -20,13 +20,15 @@ const loadRequestForm = function () {
     //add other form items if needed
     form.append(`<label class = "label">Description Of Issue<label>
   <textarea name = "descript" class="textarea"></textarea>`);
-    form.append(`<button class = "button is-link submit" type = "submit">Submit</button>`);
+    form.append(`<button class = "button is-link submit" type = "submit" id="submitform" >Submit</button>`);
     container.append(form);
     body.append(container);
 }
 
 //TODO: add handle for submit and make sure all parts are filled
-
+function check(){
+  
+}
 
 $(function () {
     loadRequestForm();
