@@ -1,4 +1,4 @@
-let loggedIn = true;
+let loggedIn = false;
 
 $(function () {
     if (loggedIn) {

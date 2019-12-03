@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
     <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
     <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="request_form_render.js" type="module"></script>
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="loadNav.js" type="module"></script>
@@ -16,8 +15,29 @@
 <body>
     <div class="root">
         <div id="nav"></div>
-    </div>
 
+        <h1 class="title" style="text-align: center; margin-top: 10px;">Request Maintenance Form</h1>
+        <div class="container">
+            <form id='requestMForm'>
+                <label class="label">First Name</label>
+                <input name="first" class="input" type="text">
+                <label class="label">Last Name</label>
+                <input name="last" class="input" type="text">
+                <label class="label">Address</label>
+                <input name="address" class="input" type="text">
+                <label class="label">City</label>
+                <input name="city" class="input" type="text">
+                <label class="label">State</label>
+                <input name="state" class="input" type="text">
+                <label class="label">ZIP Code</label>
+                <input name="zip" class="input" type="text">
+                <label class="label">Description Of Issue</label>
+                <textarea name="descript" class="textarea"></textarea>
+                <br />
+                <button class="button is-link submit" id="submitRequestMFormBtn">Submit</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
