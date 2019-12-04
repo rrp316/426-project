@@ -1,5 +1,14 @@
 //Make it check if Actually logged in
 
+/*
+let loggedin
+if (localStorage.getItem('jwt') == null){
+    loggedin = false;
+} else {
+    loggedin = true;
+}
+*/
+
 let loggedIn = false;
 
 $(function () {
