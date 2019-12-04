@@ -1,3 +1,5 @@
+//Make it check if Actually logged in
+
 let loggedIn = false;
 
 $(function () {

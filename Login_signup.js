@@ -8,7 +8,7 @@ function handleLoginButton(){
 }
 
 function handleForumButton(){
-    
+    //go to requestM.html
 }
 
 $(document).ready(function () {
