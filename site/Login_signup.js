@@ -6,6 +6,7 @@ export const handleSignUpButton = async () =>{
 
  let username = form.find('input[name=username]').val();
  let password = form.find('input[name=password]').val();
+ //change to then catch
  let result = await axios({
     method: 'POST',
     url: 'http://localhost:3000/account/create',
@@ -24,6 +25,7 @@ export const handleLoginButton = async () =>{
  let username = form.find('input[name=username]').val();
  let password = form.find('input[name=password]').val();
     //Login Code
+    //change to then catch
     let result = await axios({
         method: 'POST',
         url: 'http://localhost:3000/account/login',
