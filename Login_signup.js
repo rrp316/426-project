@@ -1,13 +1,23 @@
-function handleSignUpButton(){
+export const handleSignUpButton = async () =>{
  // sign up code
+ var form = $(`#createAccount`);
+
+ let username = form.find('input[name=username]').val();
+ let password = form.find('input[name=password]').val();
+
+
 }
 
-function handleLoginButton(){
+export const handleLoginButton = async () =>{
+    var form = $(`#LoginForum`);
+
+ let username = form.find('input[name=username]').val();
+ let password = form.find('input[name=password]').val();
     //Login Code
 
 }
 
-function handleForumButton(){
+export const handleForumButton = async () =>{
     //go to requestM.html
 }
 
