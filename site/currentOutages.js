@@ -10,13 +10,15 @@
 async function getOutages() {
     const outages = await axios({
         method: 'get',
-        url: '',
+        url: 'http://localhost:3000/public/requests',
     });
+    //outages.data.result is what has the requests
     return outages;
 }
 
 document.body.onload = async function () {
     let outages = await getOutages();
+    console.log(outages.data.result);
     let outagesCount = outages.length;
     for (let i = 0; i < outagesCount; i++) {
         $('#feed').append(`

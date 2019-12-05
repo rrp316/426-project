@@ -40,8 +40,8 @@ export const handleLoginButton = async (e) => {
 
 const loginRequest = async (username, password) => {
     await axios.post('http://localhost:3000/account/login', {
-            "name": 'test',
-            "pass": '1'
+            "name": username,
+            "pass": password
         }).then(res => {
             localStorage.setItem('jwt', res.data.jwt);
             //success code 

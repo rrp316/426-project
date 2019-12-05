@@ -16,8 +16,28 @@ export const handleFormSubmit = async () => {
     console.log(`${state}`);
     console.log(`${zip}`);
     console.log(`${description}`);
+    let resourceName = firstName+lastName+zip;
+    console.log(resourceName);
 
     //TO-DO: send the above form data to the backend and remove the console logs
+    await axios({
+        method: 'POST',
+        url: `http://localhost:3000/public/requests/${resourceName}`,
+           data:{
+                data: {
+                
+                    'firstName': firstName,
+                    'lastName': lastName,
+                    'address': address,
+                    'city': city,
+                    'state': state,
+                    'zip': zip,
+                    'description': description
+
+            }
+           }
+     });
+
 
     $(location).attr('href', 'thanks.html');
 };
