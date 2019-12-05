@@ -17,8 +17,7 @@ export const handleFormSubmit = async () => {
     console.log(`${zip}`);
     console.log(`${description}`);
 
-    //TO-DO: send the above form data to the backend
-
+    //TO-DO: send the above form data to the backend and remove the console logs
 };
 
 $(document).ready(function () {
