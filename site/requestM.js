@@ -18,6 +18,8 @@ export const handleFormSubmit = async () => {
     console.log(`${description}`);
 
     //TO-DO: send the above form data to the backend and remove the console logs
+
+    $(location).attr('href', 'thanks.html');
 };
 
 $(document).ready(function () {
