@@ -19,9 +19,9 @@
 
     </div>
     <div class="content has-text-centered">
-        <p style="padding-top:2%;">Search by city, state:</p>
-        <p>(make sure to spell out the full state name and remove the country)</p>
-        <input style="width:25%;" onkeyup="debouncedGetData()" id="addressSearchInput" class="input" type="text"
+        <p style="padding-top:2%;">Search by city and state:</p>
+        <p>(make sure to spell out the full state name)</p>
+        <input style="width:25%;" id="addressSearchInput" class="input" type="text"
             placeholder="Chapel Hill, North Carolina">
         <button class="button is-link" id="addressSearchBtn">Search</button>
     </div>
@@ -49,32 +49,8 @@
     <script src="api.js" type="text/javascript"></script>
     <script src="dataSearch.js" type="module"></script>
 
-    <!-- autocomplete feature w/ debouncing feature -->
-    <script>
-        let i = 0;
-        const getData = () => {
-            let input = document.getElementById("addressSearchInput");
-            let autocomplete = new google.maps.places.Autocomplete(input);
-            console.log(i++);
-        }
-
-        const debounce = function(fn, d) {
-            let timer;
-            return function() {
-                let context = this,
-                    args = arguments;
-                
-                clearTimeout(timer);
-                timer = setTimeout(() => {
-                    fn.apply(context, args);
-                }, d);
-            }
-        }
-        const debouncedGetData = debounce(getData, 500);
-    </script>
-    <!-- might need to change the formatting of the autocompleted location because it is not compatible with Josh's search function-->
-    <!--API for autocomplete below-->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf9N6n8-8C15iuPMLbpw85V6qrpQATX_c&libraries=places&callback=debouncedGetData"></script>
+    <!-- API for autocomplete feature -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf9N6n8-8C15iuPMLbpw85V6qrpQATX_c&libraries=places"></script>
 
 </body>
 
