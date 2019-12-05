@@ -1,3 +1,66 @@
+const statesMap = {
+    "AL": "Alabama",
+    "AK": "Alaska",
+    "AS": "American+Samoa",
+    "AZ": "Arizona",
+    "AR": "Arkansas",
+    "CA": "California",
+    "CO": "Colorado",
+    "CT": "Connecticut",
+    "DE": "Delaware",
+    "DC": "District+Of+Columbia",
+    "FM": "Federated+States+Of+Micronesia",
+    "FL": "Florida",
+    "GA": "Georgia",
+    "GU": "Guam",
+    "HI": "Hawaii",
+    "ID": "Idaho",
+    "IL": "Illinois",
+    "IN": "Indiana",
+    "IA": "Iowa",
+    "KS": "Kansas",
+    "KY": "Kentucky",
+    "LA": "Louisiana",
+    "ME": "Maine",
+    "MH": "Marshall Islands",
+    "MD": "Maryland",
+    "MA": "Massachusetts",
+    "MI": "Michigan",
+    "MN": "Minnesota",
+    "MS": "Mississippi",
+    "MO": "Missouri",
+    "MT": "Montana",
+    "NE": "Nebraska",
+    "NV": "Nevada",
+    "NH": "New+Hampshire",
+    "NJ": "New+Jersey",
+    "NM": "New+Mexico",
+    "NY": "New+York",
+    "NC": "North+Carolina",
+    "ND": "North+Dakota",
+    "MP": "Northern+Mariana+Islands",
+    "OH": "Ohio",
+    "OK": "Oklahoma",
+    "OR": "Oregon",
+    "PW": "Palau",
+    "PA": "Pennsylvania",
+    "PR": "Puerto+Rico",
+    "RI": "Rhode+Island",
+    "SC": "South+Carolina",
+    "SD": "South+Dakota",
+    "TN": "Tennessee",
+    "TX": "Texas",
+    "UT": "Utah",
+    "VT": "Vermont",
+    "VI": "Virgin+Islands",
+    "VA": "Virginia",
+    "WA": "Washington",
+    "WV": "West+Virginia",
+    "WI": "Wisconsin",
+    "WY": "Wyoming"
+}
+
+
 //given an input string like: Chapel Hill, North Carolina
 //output it as: Chapel+Hill+North+Carolina
 function parseInput(s) {
@@ -64,10 +127,39 @@ async function callWeatherAPI(latitude, longitude) {
     return result;
 }
 
+//s is of the form: Chapel+Hill+North+Carolina
+//or: Raleigh+NC+USA
+function spellOutFullStateName(s) {
+    var firstIndex = -1;
+    var firstIndexSet = false;
+    var secondIndex = -1;
+
+    for (let i = 0; i < s.length; i++) {
+        let c = s.charAt(i);
+        if (c.charCodeAt(0) == 43) {
+            if (!firstIndexSet) {
+                firstIndex = i;
+                firstIndexSet = true;
+            } else {
+                secondIndex = i;
+                break;
+            }
+        }
+    }
+
+    let state = s.substring(firstIndex + 1, secondIndex);
+
+    if (state.length > 2) {
+        return s;
+    } else {
+        return s.substring(0, firstIndex + 1) + statesMap[state];
+    }
+};
+
 //expects input like: Chapel+Hill+North+Carolina
 async function callNewsAPI(s) {
     const apiKey = '71ea46e41b244d18bf28feb232a6a2b2';
-    const searchtext = s;
+    const searchtext = spellOutFullStateName(s);
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!

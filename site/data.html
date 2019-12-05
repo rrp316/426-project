@@ -20,7 +20,6 @@
     </div>
     <div class="content has-text-centered">
         <p style="padding-top:2%;">Search by city, state:</p>
-        <p>(make sure to spell out the full state name and remove the country)</p>
         <input style="width:25%;" onkeyup="debouncedGetData()" id="addressSearchInput" class="input" type="text"
             placeholder="Chapel Hill, North Carolina">
         <button class="button is-link" id="addressSearchBtn">Search</button>
@@ -55,15 +54,14 @@
         const getData = () => {
             let input = document.getElementById("addressSearchInput");
             let autocomplete = new google.maps.places.Autocomplete(input);
-            console.log(i++);
         }
 
-        const debounce = function(fn, d) {
+        const debounce = function (fn, d) {
             let timer;
-            return function() {
+            return function () {
                 let context = this,
                     args = arguments;
-                
+
                 clearTimeout(timer);
                 timer = setTimeout(() => {
                     fn.apply(context, args);
@@ -74,7 +72,8 @@
     </script>
     <!-- might need to change the formatting of the autocompleted location because it is not compatible with Josh's search function-->
     <!--API for autocomplete below-->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf9N6n8-8C15iuPMLbpw85V6qrpQATX_c&libraries=places&callback=debouncedGetData"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf9N6n8-8C15iuPMLbpw85V6qrpQATX_c&libraries=places&callback=debouncedGetData"></script>
 
 </body>
 
