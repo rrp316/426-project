@@ -6,7 +6,6 @@ export const handleSignUpButton = async () =>{
 
  let username = form.find('input[name=username]').val();
  let password = form.find('input[name=password]').val();
- //change to then catch
  let result = await axios({
     method: 'POST',
     url: 'http://localhost:3000/account/create',
@@ -19,14 +18,14 @@ export const handleSignUpButton = async () =>{
 
 }
 
-export const handleLoginButton = async () =>{
+export const handleLoginButton = async (e) => {
+    e.preventDefault();
     var form = $(`#LoginForum`);
 
  let username = form.find('input[name=username]').val();
  let password = form.find('input[name=password]').val();
     //Login Code
-    //change to then catch
-    let result = await axios({
+   /* let result = await axios({
         method: 'POST',
         url: 'http://localhost:3000/account/login',
         data: {
@@ -34,7 +33,24 @@ export const handleLoginButton = async () =>{
             "pass": password
         }
      });
-     localStorage.setItem('jwt', result.data.jwt);
+     */
+    await loginRequest(username, password);
+
+}
+
+const loginRequest = async (username, password) => {
+    await axios.post('http://localhost:3000/account/login', {
+            "name": 'test',
+            "pass": '1'
+        }).then(res => {
+            localStorage.setItem('jwt', res.data.jwt);
+            //success code 
+            //TODO redirect
+
+        }).catch(err => {
+            //failure code
+
+        });
 
 }
 
@@ -47,5 +63,5 @@ $(document).ready(function () {
     $('#SignUp').on('click', handleSignUpButton);
     $('#Login').on('click', handleLoginButton);
     $('#Forum').on('click', handleForumButton);
-
+    
 });

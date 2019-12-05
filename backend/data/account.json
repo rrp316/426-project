@@ -1,2 +1,16 @@
 {
+  "users": {
+    "test": {
+      "passwordHash": "$2a$10$PEIyym7TFdhmNaYxN9ljbuj7QuXAdN22c2K.7Hn9pkOC8Zi2JU6Ju"
+    },
+    "test2": {
+      "passwordHash": "$2a$10$gebjQ0jxEpXCgPe9OvMvbeCYm38WHOhkNhGsHlcOv5CqNJN5sIWz6"
+    },
+    "test3": {
+      "passwordHash": "$2a$10$cXi6EXkHunoJYXFw2OF2/uYCGpFRxisQmo2yvVR6bdo6qQHglzHY2"
+    },
+    "test4": {
+      "passwordHash": "$2a$10$Wc/v4Zox14aWbYOxAzAhF.v5ABiqCMpVFCQf8j2bApaKCuRbllv3G"
+    }
+  }
 }
