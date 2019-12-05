@@ -1,0 +1,5 @@
+1. see TO-DO comment in handleFormSubmit() within
+the requestM.js file.
+
+2. see TO-DO comment regarding getOutages()
+at the top of currentOutages.js
