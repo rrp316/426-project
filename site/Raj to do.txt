@@ -5,8 +5,9 @@ DONE - 2. see TO-DO comment regarding getOutages()
 at the top of currentOutages.js
 
 3. see T0-DO comment in myJobs.js, basically doing the same thing as for 
-getOutages()
+getOutages(), also TO-DO's in handleRemoveRequestFromMyJobs() and handleMarkRequestAsCompleted()
 
-4. see TO-DO in activeRequests.js, same thing here
+4. see TO-DO in activeRequests.js, same thing here. Also a TO-DO in handleAddRequestToMyJobs() of 
+activeRequests.js
 
 5. see TO-DO in pastRequest.js, same thing here

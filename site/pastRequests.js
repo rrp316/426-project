@@ -1,5 +1,4 @@
 //TO-DO: fill out the axios request to retrieve past requests
-
 async function getPastRequests() {
     const pastRequests = await axios({
         method: 'get',
