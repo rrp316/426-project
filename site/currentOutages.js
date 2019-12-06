@@ -12,18 +12,24 @@ async function getOutages() {
         method: 'get',
         url: 'http://localhost:3000/public/requests',
     });
-    //outages.data.result is what has the requests
     return outages;
 }
 
 document.body.onload = async function () {
     let outages = await getOutages();
-    console.log(outages.data.result);
-    let outagesCount = outages.length;
-    for (let i = 0; i < outagesCount; i++) {
-        $('#feed').append(`
+    outages = outages.data.result;
+
+    for (let i in outages) {
+        $('#outagesParentDiv').append(`
             <div class="card">
-                
-            </div>`);
+                <div class="card-content">
+                    <div class="content">
+                        ${outages[i]['address']} ${outages[i]['city']}
+                        <br />
+                        ${outages[i]['state']} ${outages[i]['zip']}
+                    </div>
+                </div>
+            </div>
+            <br />`);
     }
 }
