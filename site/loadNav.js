@@ -9,7 +9,7 @@ if (localStorage.getItem('jwt') == null){
 }
 */
 
-let loggedIn = false;
+let loggedIn = true;
 
 $(function () {
     if (loggedIn) {

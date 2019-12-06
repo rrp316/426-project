@@ -3,3 +3,10 @@ the requestM.js file.
 
 DONE - 2. see TO-DO comment regarding getOutages()
 at the top of currentOutages.js
+
+3. see T0-DO comment in myJobs.js, basically doing the same thing as for 
+getOutages()
+
+4. see TO-DO in activeRequests.js, same thing here
+
+5. see TO-DO in pastRequest.js, same thing here
