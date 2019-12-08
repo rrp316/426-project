@@ -31,7 +31,7 @@ export const handleAddRequestToMyJobs = async function (event) {
 
     await axios({
         method: 'POST',
-        url: `http://localhost:3000/account/${userName}/${resourceName}`,
+        url: `http://localhost:3000/user/${userName}/requests/${resourceName}`,
         data: {
             data: {
                 'firstName': firstName,
@@ -42,7 +42,8 @@ export const handleAddRequestToMyJobs = async function (event) {
                 'zip': zip,
                 'description': description
 
-            }
+            },
+            type: "merge"
         },
         headers: { Authorization: `Bearer ${jwt}` }
     });

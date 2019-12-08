@@ -1,9 +1,9 @@
 //TO-DO: fill out the axios request to retrieve my jobs
 async function getMyJobs() {
-    let userName = localStorage('un');
+    let userName = localStorage.getItem('un');
     const jobs = await axios({
         method: 'get',
-        url: `http://localhost:3000/account/${userName}`,
+        url: `http://localhost:3000/user/${userName}/requests`,
         headers: { Authorization: `Bearer ${jwt}` }
     });
     return jobs;
@@ -40,7 +40,7 @@ export const handleRemoveRequestFromMyJobs = async function () {
         }
     });
     
-    await axios.delete(`http://localhost:3000/account/${userName}/${resourceName}`,
+    await axios.delete(`http://localhost:3000/user/${userName}/requests/${resourceName}`,
     {data: null}, 
     {headers: { Authorization: `Bearer ${jwt}` }});
 
@@ -74,7 +74,7 @@ export const handleMarkRequestAsCompleted = async function () {
         headers: { Authorization: `Bearer ${jwt}` }
     });
 
-    await axios.delete(`http://localhost:3000/account/${userName}/${resourceName}`,
+    await axios.delete(`http://localhost:3000/user/${userName}/requests/${resourceName}`,
     {data: null}, 
     {headers: { Authorization: `Bearer ${jwt}` }});
 };
