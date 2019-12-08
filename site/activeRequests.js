@@ -28,7 +28,7 @@ export const handleAddRequestToMyJobs = async function (event) {
     console.log(zip);
     console.log(description);*/
 
-
+    /*
     await axios({
         method: 'POST',
         url: `http://localhost:3000/account/${userName}/${resourceName}`,
@@ -45,13 +45,13 @@ export const handleAddRequestToMyJobs = async function (event) {
             }
         },
         headers: { Authorization: `Bearer ${jwt}` }
-    });
+    });*/
 
     await axios.delete(`http://localhost:3000/public/requests/${resourceName}`);
 
     //let me know if this delete works I haven't tested it
 
-    //location.reload();
+    window.location.href = "myJobs.html";
 };
 
 document.body.onload = async function () {

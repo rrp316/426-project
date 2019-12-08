@@ -10,6 +10,10 @@ if (localStorage.getItem('jwt') == null) {
 }
 
 
+
+//let loggedIn = false;
+
+
 $(function () {
     if (loggedIn) {
         $("#nav").load("loggedInNav.html");
