@@ -1,8 +1,10 @@
 //TO-DO: fill out the axios request to retrieve past requests
 async function getPastRequests() {
+    let jwt = localStorage.getItem('jwt');
     const pastRequests = await axios({
         method: 'get',
-        url: '',
+        url: `http://localhost:3000/private/log`,
+        headers: { Authorization: `Bearer ${jwt}` }
     });
     return pastRequests;
 }

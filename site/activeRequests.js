@@ -2,8 +2,9 @@
 async function getActiveRequests() {
     const activeRequests = await axios({
         method: 'get',
-        url: '',
+        url: 'http://localhost:3000/public/requests',
     });
+    //again you'll need to get it from activerequests.data.result
     return activeRequests;
 }
 
@@ -13,10 +14,29 @@ export const handleAddRequestToMyJobs = async function () {
     * data you need, I can then figure out how to get that data from
     * the DOM. 
     */
+   let resourceName;
+   let userName = localStorage.getItem('un');
+   let jwt = localStorage.getItem('jwt');
     const result = await axios({
-        method: 'post',
-        url: '',
+        method: 'POST',
+        url: `http://localhost:3000/account/${userName}/${resourceName}`,
+        data: {
+            data: {
+                'firstName': firstName,
+                'lastName': lastName,
+                'address': address,
+                'city': city,
+                'state': state,
+                'zip': zip,
+                'description': description
+
+            }
+        },
+        headers: { Authorization: `Bearer ${jwt}` }
     });
+
+    await axios.delete(`http://localhost:3000/public/requests/${resourceName}`);
+    //let me know if this delete works I haven't tested it
 
     //location.reload();
 };

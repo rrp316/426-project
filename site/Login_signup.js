@@ -44,6 +44,7 @@ const loginRequest = async (username, password) => {
             "pass": password
         }).then(res => {
             localStorage.setItem('jwt', res.data.jwt);
+            localStorage.setItem('un', username);
             //success code 
             //TODO redirect
 
