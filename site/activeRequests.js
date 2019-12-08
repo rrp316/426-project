@@ -1,10 +1,9 @@
-//TO-DO: fill out the axios request to retrieve active requests
 async function getActiveRequests() {
     const activeRequests = await axios({
         method: 'get',
         url: 'http://localhost:3000/public/requests',
     });
-    //again you'll need to get it from activerequests.data.result
+
     return activeRequests;
 }
 
@@ -14,9 +13,9 @@ export const handleAddRequestToMyJobs = async function () {
     * data you need, I can then figure out how to get that data from
     * the DOM. 
     */
-   let resourceName;
-   let userName = localStorage.getItem('un');
-   let jwt = localStorage.getItem('jwt');
+    let resourceName;
+    let userName = localStorage.getItem('un');
+    let jwt = localStorage.getItem('jwt');
     const result = await axios({
         method: 'POST',
         url: `http://localhost:3000/account/${userName}/${resourceName}`,
@@ -43,6 +42,19 @@ export const handleAddRequestToMyJobs = async function () {
 
 document.body.onload = async function () {
     let activeRequests = await getActiveRequests();
+    activeRequests = activeRequests.data.result;
 
-    //then Josh can add it to the DOM
+    for (let i in activeRequests) {
+        $('#activeRequestsParentDiv').append(`
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        ${activeRequests[i]['address']} ${activeRequests[i]['city']}
+                        <br />
+                        ${activeRequests[i]['state']} ${activeRequests[i]['zip']}
+                    </div>
+                </div>
+            </div>
+            <br />`);
+    }
 }

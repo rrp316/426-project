@@ -1,15 +1,14 @@
 //Make it check if Actually logged in
 
-/*
-let loggedin
-if (localStorage.getItem('jwt') == null){
-    loggedin = false;
-} else {
-    loggedin = true;
-}
-*/
 
-let loggedIn = true;
+let loggedIn;
+
+if (localStorage.getItem('jwt') == null) {
+    loggedIn = false;
+} else {
+    loggedIn = true;
+}
+
 
 $(function () {
     if (loggedIn) {

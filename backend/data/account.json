@@ -11,6 +11,9 @@
     },
     "test4": {
       "passwordHash": "$2a$10$Wc/v4Zox14aWbYOxAzAhF.v5ABiqCMpVFCQf8j2bApaKCuRbllv3G"
+    },
+    "josh": {
+      "passwordHash": "$2a$10$2fk61aadMDWjeWWXS8xsiuvTAVTDffXOO8pTLFfIWnxzYYBiX3FL2"
     }
   }
 }

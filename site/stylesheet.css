@@ -3,7 +3,7 @@
   text-decoration: underline;
 } 
 
-#outagesParentDiv {
+.outages_requestsParentDiv {
     width: 40%;
     margin: 0 auto;
     text-align: center;

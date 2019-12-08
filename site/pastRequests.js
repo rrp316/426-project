@@ -1,4 +1,3 @@
-//TO-DO: fill out the axios request to retrieve past requests
 async function getPastRequests() {
     let jwt = localStorage.getItem('jwt');
     const pastRequests = await axios({
@@ -11,6 +10,18 @@ async function getPastRequests() {
 
 document.body.onload = async function () {
     let pastRequests = await getPastRequests();
-
-    //then Josh can add it to the DOM
+    console.log(pastRequests);
+    /*for (let i in activeRequests) {
+        $('#activeRequestsParentDiv').append(`
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        ${activeRequests[i]['address']} ${activeRequests[i]['city']}
+                        <br />
+                        ${activeRequests[i]['state']} ${activeRequests[i]['zip']}
+                    </div>
+                </div>
+            </div>
+            <br />`);
+    }*/
 }
