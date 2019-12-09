@@ -23,16 +23,6 @@ export const handleRemoveRequestFromMyJobs = async function () {
     let state = $(`#${resourceName}_state`).text();
     let zip = $(`#${resourceName}_zip`).text();
     let description = $(`#${resourceName}_description`).text();
-    console.log(resourceName);
-    console.log(userName);
-    console.log(jwt);
-    console.log(firstName);
-    console.log(lastName);
-    console.log(address);
-    console.log(city);
-    console.log(state);
-    console.log(zip);
-    console.log(description);
 
     const result = await axios({
         method: 'POST',
@@ -53,6 +43,8 @@ export const handleRemoveRequestFromMyJobs = async function () {
 
     await axios.delete(`http://localhost:3000/user/${userName}/requests/${resourceName}`,
         { headers: { Authorization: `Bearer ${jwt}` } });
+
+    window.location.href = "activeRequests.html";
 };
 
 export const handleMarkRequestAsCompleted = async function () {
@@ -67,16 +59,6 @@ export const handleMarkRequestAsCompleted = async function () {
     let state = $(`#${resourceName}_state`).text();
     let zip = $(`#${resourceName}_zip`).text();
     let description = $(`#${resourceName}_description`).text();
-    console.log(resourceName);
-    console.log(userName);
-    console.log(jwt);
-    console.log(firstName);
-    console.log(lastName);
-    console.log(address);
-    console.log(city);
-    console.log(state);
-    console.log(zip);
-    console.log(description);
 
     const result = await axios({
         method: 'POST',
@@ -99,12 +81,13 @@ export const handleMarkRequestAsCompleted = async function () {
 
     await axios.delete(`http://localhost:3000/user/${userName}/requests/${resourceName}`,
         { headers: { Authorization: `Bearer ${jwt}` } });
+
+    window.location.href = "myJobs.html";
 };
 
 document.body.onload = async function () {
     let jobs = await getMyJobs();
     jobs = jobs.data.result;
-    console.log(jobs);
 
     for (let i in jobs) {
         $('#jobsParentDiv').append(`

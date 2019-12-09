@@ -11,11 +11,11 @@ document.body.onload = async function () {
     outages = outages.data.result;
 
     for (let i in outages) {
-        $('#outagesParentDiv').append(`
+        $('#outagesParentDiv').prepend(`
             <div class="card">
                 <div class="card-content">
                     <div class="content">
-                        ${outages[i]['address']} ${outages[i]['city']}
+                        ${outages[i]['city']}
                         <br />
                         ${outages[i]['state']} ${outages[i]['zip']}
                     </div>

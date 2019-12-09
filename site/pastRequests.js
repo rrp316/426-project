@@ -14,7 +14,7 @@ document.body.onload = async function () {
     console.log(pastRequests);
 
     for (let i in pastRequests) {
-        $('#pastRequestsParentDiv').append(`
+        $('#pastRequestsParentDiv').prepend(`
             <div class="card">
                 <div class="card-content">
                     <div class="content">
@@ -24,7 +24,6 @@ document.body.onload = async function () {
                         <p>Description: <span id="${i}_description">${pastRequests[i]['description']}</span></p>
                     </div>
                 </div>
-                <button class="addToMyJobsBtn button is-link" id="${i}">Add to My Jobs</button>
                 <br />
                 <br />
             </div>

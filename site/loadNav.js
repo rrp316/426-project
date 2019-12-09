@@ -4,6 +4,7 @@ let loggedIn;
 if (localStorage.getItem('jwt') == null) {
     loggedIn = false;
 } else {
+    //console.log(localStorage.getItem('jwt'));
     loggedIn = true;
 }
 
@@ -16,7 +17,6 @@ export const handleLogoutBtnPress = function () {
     localStorage.removeItem('un');
 
     //TODO need to redirect so that it refreshes to a non-logged in page
-
 };
 
 
@@ -28,6 +28,7 @@ $(function () {
     }
 });
 
+/*
 document.body.onload = function () {
-    $('#logoutBtn').on('click', handleLogoutBtnPress);
-}
+    $('.logoutBtn').on('click', handleLogoutBtnPress);
+}*/

@@ -48,7 +48,7 @@ document.body.onload = async function () {
     activeRequests = activeRequests.data.result;
 
     for (let i in activeRequests) {
-        $('#activeRequestsParentDiv').append(`
+        $('#activeRequestsParentDiv').prepend(`
             <div class="card">
                 <div class="card-content">
                     <div class="content">
