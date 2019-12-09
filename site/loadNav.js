@@ -1,5 +1,3 @@
-//Make it check if Actually logged in
-
 
 let loggedIn;
 
@@ -13,6 +11,10 @@ if (localStorage.getItem('jwt') == null) {
 
 //let loggedIn = false;
 
+export const handleLogoutBtnPress = function () {
+
+};
+
 
 $(function () {
     if (loggedIn) {
@@ -21,3 +23,7 @@ $(function () {
         $("#nav").load("unloggedInNav.html");
     }
 });
+
+document.body.onload = function () {
+    $('#logoutBtn').on('click', handleLogoutBtnPress);
+}

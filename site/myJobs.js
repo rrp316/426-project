@@ -12,10 +12,28 @@ async function getMyJobs() {
 // remove the request because the technician says they cannot do it, 
 // not because they finished it
 export const handleRemoveRequestFromMyJobs = async function () {
-    // this should end up back in active requests?
-    let resourceName;
+    // this should end up back in active requests
+    let resourceName = event.currentTarget.id;
     let jwt = localStorage.getItem('jwt');
     let userName = localStorage.getItem('un');
+    let firstName = $(`#${resourceName}_firstName`).text();
+    let lastName = $(`#${resourceName}_lastName`).text();
+    let address = $(`#${resourceName}_address`).text();
+    let city = $(`#${resourceName}_city`).text();
+    let state = $(`#${resourceName}_state`).text();
+    let zip = $(`#${resourceName}_zip`).text();
+    let description = $(`#${resourceName}_description`).text();
+    console.log(resourceName);
+    console.log(userName);
+    console.log(jwt);
+    console.log(firstName);
+    console.log(lastName);
+    console.log(address);
+    console.log(city);
+    console.log(state);
+    console.log(zip);
+    console.log(description);
+
     const result = await axios({
         method: 'POST',
         url: `http://localhost:3000/public/requests/${resourceName}`,
@@ -111,4 +129,5 @@ document.body.onload = async function () {
     }
 
     $('.markCompletedBtn').on('click', handleMarkRequestAsCompleted);
+    $('.cannotCompleteBtn').on('click', handleRemoveRequestFromMyJobs);
 }
