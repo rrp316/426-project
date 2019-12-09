@@ -10,8 +10,6 @@ async function getActiveRequests() {
 export const handleAddRequestToMyJobs = async function (event) {
     let resourceName = event.currentTarget.id;
     let userName = localStorage.getItem('un');
-    console.log(`resourceName: ${resourceName}`);
-    console.log(`userName: ${userName}`);
     let jwt = localStorage.getItem('jwt');
     let firstName = $(`#${resourceName}_firstName`).text();
     let lastName = $(`#${resourceName}_lastName`).text();
@@ -20,14 +18,6 @@ export const handleAddRequestToMyJobs = async function (event) {
     let state = $(`#${resourceName}_state`).text();
     let zip = $(`#${resourceName}_zip`).text();
     let description = $(`#${resourceName}_description`).text();
-    /*console.log(firstName);
-    console.log(lastName);
-    console.log(address);
-    console.log(city);
-    console.log(state);
-    console.log(zip);
-    console.log(description);*/
-
 
     await axios({
         method: 'POST',
