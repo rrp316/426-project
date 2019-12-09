@@ -12,6 +12,10 @@ if (localStorage.getItem('jwt') == null) {
 //let loggedIn = false;
 
 export const handleLogoutBtnPress = function () {
+    localStorage.removeItem('jwt');
+    localStorage.removeItem('un');
+
+    //TODO need to redirect so that it refreshes to a non-logged in page
 
 };
 

@@ -52,7 +52,6 @@ export const handleRemoveRequestFromMyJobs = async function () {
     });
 
     await axios.delete(`http://localhost:3000/user/${userName}/requests/${resourceName}`,
-        { data: null },
         { headers: { Authorization: `Bearer ${jwt}` } });
 };
 
@@ -99,13 +98,13 @@ export const handleMarkRequestAsCompleted = async function () {
     });
 
     await axios.delete(`http://localhost:3000/user/${userName}/requests/${resourceName}`,
-        { data: null },
         { headers: { Authorization: `Bearer ${jwt}` } });
 };
 
 document.body.onload = async function () {
     let jobs = await getMyJobs();
-    jobs = jobs['data']['result'];
+    jobs = jobs.data.result;
+    console.log(jobs);
 
     for (let i in jobs) {
         $('#jobsParentDiv').append(`
